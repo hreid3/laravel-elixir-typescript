@@ -42,7 +42,7 @@ Elixir.extend('typescript', function(src, output, options) {
 
                     this.emit('end');
                 }))
-            .pipe($.concat(paths.output.name))
+//            .pipe($.concat(paths.output.name))
             .pipe($.if(config.production, $.uglify()))
             .pipe($.if(config.sourcemaps, $.sourcemaps.write('.')))
             .pipe(gulp.dest(paths.output.baseDir))
